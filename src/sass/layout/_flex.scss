@@ -1,0 +1,11 @@
+.flex {
+	display: flex;
+	gap: var(--flex-spacer, 0.5em);
+}
+
+.flex-double-column {
+	& > * {
+		flex: 1 1 50%;
+		width: 50%;
+	}
+}

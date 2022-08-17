@@ -1,12 +1,14 @@
 body {
 	font-family: var(--ff-primary);
 	font-size: var(--fz-400);
+	font-weight: var(--fw-400);
 	color: var(--clr-neutral-500);
 }
 
 main {
 	min-height: 100vh;
 	place-content: center;
+	padding-block: 3.2rem;
 }
 
 h1,
