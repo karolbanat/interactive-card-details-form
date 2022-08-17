@@ -1,0 +1,87 @@
+@use '../base/mixins';
+
+.card {
+	--width: 28.7rem;
+	--height: 15.8rem;
+
+	display: flex;
+	flex-direction: column;
+	width: var(--width);
+	height: var(--height);
+	color: var(--clr-neutral-100);
+	background-color: var(--clr-neutral-400);
+	border-radius: var(--borr-400);
+	line-height: 1;
+
+	&__logo {
+		--width: 5.6rem;
+		width: var(--width);
+	}
+
+	&__card-number {
+		margin-top: auto;
+		font-size: var(--fz-card-number);
+		letter-spacing: 2px;
+	}
+
+	&__footer {
+		--margin-top: 2rem;
+		margin-top: var(--margin-top);
+		font-size: var(--fz-200);
+		text-transform: uppercase;
+		letter-spacing: 2px;
+	}
+
+	&__cvc-number {
+		font-size: var(--fz-200);
+		text-align: right;
+	}
+
+	&--front {
+		--padding-block: 2rem;
+		--padding-inline: 2rem;
+		padding-block: var(--padding-block);
+		padding-inline: var(--padding-inline);
+		background-image: url('../images/bg-card-front.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	&--back {
+		--padding-block: 7.2rem;
+		--padding-inline: 3.6rem;
+		padding-block: var(--padding-block);
+		padding-inline: var(--padding-inline);
+		background-image: url('../images/bg-card-back.png');
+		background-repeat: no-repeat;
+		background-size: cover;
+	}
+
+	@include mixins.mq(medium) {
+		--width: 44.7rem;
+		--height: 24.5rem;
+
+		&__logo {
+			--width: auto;
+			align-self: flex-start;
+		}
+
+		&__card-number {
+			letter-spacing: 6px;
+		}
+
+		&__footer {
+			--margin-top: 3.6rem;
+		}
+
+		&--front {
+			--padding-block: 3rem;
+			--padding-inline: 3.2rem;
+		}
+
+		&--back {
+			--padding-block: 11.4rem;
+			--padding-inline: 6rem;
+		}
+	}
+}

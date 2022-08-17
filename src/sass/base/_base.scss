@@ -7,7 +7,8 @@ body {
 
 main {
 	min-height: 100vh;
-	place-content: center;
+	display: grid;
+	align-content: center;
 	padding-block: 3.2rem;
 }
 

@@ -1,7 +1,10 @@
 .confirmation {
+	--max-width: 38rem;
+
 	display: flex;
 	flex-direction: column;
 	align-items: center;
+	width: min(100%, var(--max-width));
 
 	& > p {
 		font-size: var(--fz-confirmation-text);

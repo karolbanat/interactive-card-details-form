@@ -1,0 +1,42 @@
+@use '../base/mixins';
+
+.card-container {
+	--max-width: 36rem;
+
+	display: grid;
+	width: min(100%, var(--max-width));
+
+	&__front {
+		grid-row: 1;
+		grid-column: 1;
+		margin-top: 9rem;
+	}
+
+	&__back {
+		grid-row: 1;
+		grid-column: 1;
+		justify-self: end;
+		z-index: -1;
+	}
+
+	@include mixins.mq(medium) {
+		--max-width: 54.2rem;
+
+		&__front {
+			margin-top: 14rem;
+		}
+	}
+
+	@include mixins.mq(large) {
+		gap: 3.6rem;
+
+		&__front {
+			grid-row: 1;
+			margin-top: 0;
+		}
+
+		&__back {
+			grid-row: 2;
+		}
+	}
+}

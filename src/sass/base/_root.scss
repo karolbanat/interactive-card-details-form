@@ -33,11 +33,11 @@
 	}
 
 	// font sizes exceptions
-	--fz-card-number: 1.6rem;
+	--fz-card-number: 1.8rem;
 	--fz-confirmation-text: 1.8rem;
 
 	@include mixins.mq(medium) {
-		--fz-card-number: 2.2rem;
+		--fz-card-number: 2.4rem;
 	}
 
 	// border radius
