@@ -9,9 +9,9 @@
 	width: var(--width);
 	height: var(--height);
 	color: var(--clr-neutral-100);
-	background-color: var(--clr-neutral-400);
 	border-radius: var(--borr-400);
 	line-height: 1;
+	overflow: hidden;
 
 	&__logo {
 		--width: 5.6rem;
