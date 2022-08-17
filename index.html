@@ -24,32 +24,91 @@
 </head>
 
 <body>
-    0000 0000 0000 0000
-    Jane Appleseed
-    00/00
 
-    000
+    <main>
+        <div class="container">
+            <section class="card-detials">
+                <h1 class="visually-hidden">Add your card details</h1>
 
-    Cardholder Name
-    e.g. Jane Appleseed
+                <div class="card-container">
+                    <div class="card card--front">
+                        <img src="./dist/images/card-logo.svg"
+                             alt=""
+                             class="card__logo">
+                        <p class="card__card-number">0000 0000 0000 0000</p>
+                        <div class="card__footer">
+                            <p class="card__cardholder-name">Jane Appleseed</p>
+                            <p class="card__expiration-date"><span>00</span>/<span>00</span></p>
+                        </div>
+                    </div>
+                    <div class="card card--back">
+                        <p class="card__cvc-number">000</p>
+                    </div>
+                </div>
 
-    Card Number
-    e.g. 1234 5678 9123 0000
+                <div class="details">
+                    <form class="details-form details__front">
+                        <div class="detials-form__input-container">
+                            <label for="cardholder-name"
+                                   class="detials-form__label">Cardholder Name</label>
+                            <input type="text"
+                                   placeholder="e.g. Jane Appleseed"
+                                   id="cardholder-name"
+                                   class="detials-form__input">
+                        </div>
+                        <div class="detials-form__input-container">
+                            <label for="card-number"
+                                   class="detials-form__label">Card Number</label>
+                            <input type="text"
+                                   placeholder="e.g. 1234 5678 9123 0000"
+                                   id="card-number"
+                                   class="detials-form__input">
+                        </div>
+                        <div class="flex">
+                            <div class="detials-form__input-container">
+                                <label id="expiration-date"
+                                       class="detials-form__label">Exp. Date (MM/YY)</label>
+                                <div class="flex">
+                                    <label for="expiration-month"
+                                           class="detials-form__label | visually-hidden">Expiration Month</label>
+                                    <input type="text"
+                                           placeholder="MM"
+                                           id="expiration-month"
+                                           class="detials-form__input">
+                                    <label for="expiration-year"
+                                           class="detials-form__label | visually-hidden">Expiration Year</label>
+                                    <input type="text"
+                                           placeholder="YY"
+                                           id="expiration-year"
+                                           class="detials-form__input">
+                                </div>
+                            </div>
+                            <div class="detials-form__input-container">
+                                <label for="card-cvc"
+                                       class="detials-form__label">CVC</label>
+                                <input type="text"
+                                       placeholder="e.g. 123"
+                                       id="card-cvc"
+                                       class="detials-form__input">
+                            </div>
+                        </div>
+                        <button type="submit"
+                                class="button">Confirm</button>
+                    </form>
 
-    Exp. Date (MM/YY)
-    MM
-    YY
+                    <div class="confirmation details__back">
+                        <img src="./dist/images/icon-complete.svg"
+                             alt="">
+                        <h2 class="confirmation__heading">Thank you!</h2>
+                        <p>We've added your card details</p>
+                        <button class="button">Continue</button>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
 
-    CVC
-    e.g. 123
 
-    Confirm
-
-    <!-- Completed state start -->
-
-    Thank you!
-    We've added your card details
-    Continue
 </body>
 
 </html>
