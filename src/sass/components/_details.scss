@@ -1,0 +1,43 @@
+.details {
+	--front-angle: 0deg;
+	--back-angle: 180deg;
+	--front-opacity: 1;
+	--back-opacity: 0;
+	--z-index-front: 0;
+	--z-index-back: -1;
+
+	position: relative;
+	perspective: 1000px;
+	padding-inline: 0.8rem;
+
+	&__side {
+		opacity: var(--opacity, 1);
+		transform: rotateY(var(--angle, 0));
+		z-index: var(--z-index, auto);
+		transition: transform 0.5s ease-in-out, opacity 0.5s ease;
+	}
+
+	&__front {
+		--opacity: var(--front-opacity);
+		--angle: var(--front-angle);
+		--z-index: var(--z-index-front);
+	}
+
+	&__back {
+		--opacity: var(--back-opacity);
+		--angle: var(--back-angle);
+		--z-index: var(--z-index-back);
+
+		position: absolute;
+		inset: 0;
+	}
+
+	&[data-completed] {
+		--front-angle: -180deg;
+		--back-angle: 0deg;
+		--front-opacity: 0;
+		--back-opacity: 1;
+		--z-index-front: -1;
+		--z-index-back: 0;
+	}
+}
