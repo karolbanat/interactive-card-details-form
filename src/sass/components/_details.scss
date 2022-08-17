@@ -12,7 +12,7 @@
 
 	position: relative;
 	perspective: 1000px;
-	margin-inline: 0.8rem;
+	margin-inline: var(--spacing-em-200);
 	width: min(100%, var(--max-width));
 
 	&__side {
@@ -46,7 +46,7 @@
 		--z-index-back: 0;
 	}
 
-	@include mixins.mq(large) {
-		margin-inline: 6.4rem;
+	@include mixins.mq(medium) {
+		margin-inline: var(--spacing-rem-700);
 	}
 }

@@ -9,7 +9,7 @@ main {
 	min-height: 100vh;
 	display: grid;
 	align-content: center;
-	padding-block: 3.2rem;
+	padding-block: var(--spacing-em-600);
 }
 
 h1,

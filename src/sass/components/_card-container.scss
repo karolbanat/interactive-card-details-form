@@ -28,7 +28,7 @@
 	}
 
 	@include mixins.mq(large) {
-		gap: 3.6rem;
+		gap: var(--spacing-rem-500);
 
 		&__front {
 			grid-row: 1;
