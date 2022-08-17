@@ -1,19 +1,54 @@
 $breakpoints: (
 	small: 38em,
-	medium: 50em,
+	medium: 48em,
 	large: 62em,
 );
 
-$colors: ();
-
-$font-sizes: (
-	small: (),
-	medium: (),
+$colors: (
+	primary: (
+		300: hsl(249 99% 64%),
+		400: hsl(278 94% 30%),
+		700: hsl(278 68% 11%),
+	),
+	accent: (
+		400: hsl(0 100% 66%),
+	),
+	neutral: (
+		100: hsl(0 0% 100%),
+		400: hsl(270 3% 87%),
+		500: hsl(279 6% 55%),
+		900: hsl(0 0% 0%),
+	),
 );
 
-$font-weights: ();
+$font-sizes: (
+	small: (
+		100: 1rem,
+		200: 1.2rem,
+		400: 1.6rem,
+		500: 1.8rem,
+		700: 2.2rem,
+	),
+	medium: (
+		100: 1.2rem,
+		400: 1.8rem,
+	),
+);
+// 1.0rem -> 1.2rem     card CVC, details
+// 1.6rem -> 2.2rem     card number
+// 1.2rem -> 1.2rem     input label
+// 1.6rem -> 1.8rem     input field, button
+// 2.2rem -> 2.2rem     confirmation title
+// 1.8rem -> 1.8rem     confirmation text
 
-$border-radius: ();
+$font-weights: (
+	400: 500,
+);
+
+$border-radius: (
+	400: 1rem,
+	900: 100vmax,
+);
 
 $spacings: (
 	em: (),

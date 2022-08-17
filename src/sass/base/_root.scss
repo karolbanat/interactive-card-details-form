@@ -10,6 +10,7 @@
 	}
 
 	// font families
+	--ff-primary: 'Space Grotesk', sans-serif;
 
 	// font wieghts
 	@each $font-weight, $value in variables.$font-weights {
@@ -29,6 +30,14 @@
 				}
 			}
 		}
+	}
+
+	// font sizes exceptions
+	--fz-card-number: 1.6rem;
+	--fz-confirmation-text: 1.8rem;
+
+	@include mixins.mq(medium) {
+		--fz-card-number: 2.2rem;
 	}
 
 	// border radius
