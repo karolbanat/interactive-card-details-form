@@ -1,0 +1,28 @@
+.confirmation {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+
+	& > p {
+		font-size: var(--fz-confirmation-text);
+
+		&:is(:last-of-type) {
+			margin-bottom: 5rem;
+		}
+	}
+
+	&__heading {
+		margin-bottom: 1.25em;
+		font-size: var(--fz-700);
+		text-transform: uppercase;
+		letter-spacing: 6px;
+	}
+
+	&__icon {
+		margin-bottom: 4rem;
+	}
+
+	&__button {
+		align-self: stretch;
+	}
+}
