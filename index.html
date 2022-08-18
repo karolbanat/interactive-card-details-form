@@ -35,14 +35,17 @@
                         <img src="./dist/images/card-logo.svg"
                              alt=""
                              class="card__logo">
-                        <p class="card__card-number">0000 0000 0000 0000</p>
+                        <p id="card-number-output"
+                           class="card__card-number">0000 0000 0000 0000</p>
                         <div class="flex flex-space-between card__footer">
-                            <p class="card__cardholder-name">Jane Appleseed</p>
-                            <p class="card__expiration-date"><span>00</span>/<span>00</span></p>
+                            <p id="cardholder-name-output">Jane Appleseed</p>
+                            <p><span id="expiration-month-output">00</span>/<span id="expiration-year-output">00</span>
+                            </p>
                         </div>
                     </div>
                     <div class="card card--back card-container__back">
-                        <p class="card__cvc-number">000</p>
+                        <p id="card-cvc-output"
+                           class="card__cvc-number">000</p>
                     </div>
                 </div>
 
@@ -57,14 +60,17 @@
                                    placeholder="e.g. Jane Appleseed"
                                    id="cardholder-name"
                                    class="details-form__input">
+                            <p class="details-form__error"></p>
                         </div>
                         <div class="details-form__input-container">
                             <label for="card-number"
                                    class="details-form__label">Card Number</label>
                             <input type="text"
                                    placeholder="e.g. 1234 5678 9123 0000"
+                                   maxlength="19"
                                    id="card-number"
                                    class="details-form__input">
+                            <p class="details-form__error"></p>
                         </div>
                         <div class="flex flex-double-column">
                             <div class="details-form__input-container">
@@ -84,6 +90,7 @@
                                            id="expiration-year"
                                            class="details-form__input">
                                 </div>
+                                <p class="details-form__error"></p>
                             </div>
                             <div class="details-form__input-container">
                                 <label for="card-cvc"
@@ -92,10 +99,11 @@
                                        placeholder="e.g. 123"
                                        id="card-cvc"
                                        class="details-form__input">
+                                <p class="details-form__error"></p>
                             </div>
                         </div>
                         <button type="submit"
-                                id="confirm"
+                                id="details-submit-button"
                                 class="button">Confirm</button>
                     </form>
 
@@ -107,7 +115,8 @@
                              class="confirmation__icon">
                         <h2 class="confirmation__heading">Thank you!</h2>
                         <p>We've added your card details</p>
-                        <button class="button confirmation__button">Continue</button>
+                        <button id="confirmation-button"
+                                class="button confirmation__button">Continue</button>
                     </div>
                 </div>
             </section>

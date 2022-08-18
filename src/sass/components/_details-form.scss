@@ -40,5 +40,16 @@
 			color: var(--clr-neutral-500);
 			opacity: 0.5;
 		}
+
+		&.error {
+			border: 1px solid var(--clr-accent-400);
+		}
+	}
+
+	&__error {
+		margin-top: var(--spacing-em-200);
+		font-size: var(--fz-200);
+		line-height: 1;
+		color: var(--clr-accent-400);
 	}
 }
