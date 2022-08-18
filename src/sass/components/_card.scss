@@ -18,6 +18,11 @@
 		width: var(--width);
 	}
 
+	&__cardholder-name {
+		word-wrap: break-word;
+		max-width: 25ch;
+	}
+
 	&__card-number {
 		margin-top: auto;
 		font-size: var(--fz-card-number);

@@ -38,7 +38,8 @@
                         <p id="card-number-output"
                            class="card__card-number">0000 0000 0000 0000</p>
                         <div class="flex flex-space-between card__footer">
-                            <p id="cardholder-name-output">Jane Appleseed</p>
+                            <p id="cardholder-name-output"
+                               class="card__cardholder-name">Jane Appleseed</p>
                             <p><span id="expiration-month-output">00</span>/<span id="expiration-year-output">00</span>
                             </p>
                         </div>
@@ -80,12 +81,14 @@
                                            class="details-form__label | visually-hidden">Expiration Month</label>
                                     <input type="text"
                                            placeholder="MM"
+                                           maxlength="2"
                                            id="expiration-month"
                                            class="details-form__input">
                                     <label for="expiration-year"
                                            class="details-form__label | visually-hidden">Expiration Year</label>
                                     <input type="text"
                                            placeholder="YY"
+                                           maxlength="2"
                                            id="expiration-year"
                                            class="details-form__input">
                                 </div>
@@ -96,6 +99,7 @@
                                        class="details-form__label">CVC</label>
                                 <input type="text"
                                        placeholder="e.g. 123"
+                                       maxlength="3"
                                        id="card-cvc"
                                        class="details-form__input">
                                 <p class="details-form__error"></p>
