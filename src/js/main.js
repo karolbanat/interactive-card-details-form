@@ -1,4 +1,5 @@
 let detailsCard;
+let detailsFront, detailsBack;
 let cardholderInput, cardholderOutput;
 let cardNumberInput, cardNumberOutput;
 let expirationMonthInput, expirationMonthOutput;
@@ -6,6 +7,7 @@ let expirationYearInput, expirationYearOutput;
 let cvcNumberInput, cvcNumberOutput;
 let submitBtn, continueBtn;
 
+/* defaults for reseting information on outputs */
 const DEFAULT_CARDHOLDER = 'Jane appleseed';
 const DEFAULT_CARD_NUMBER = '0000 0000 0000 0000';
 const DEFAULT_EXPIRATION_MONTH = '00';
@@ -19,7 +21,10 @@ const main = () => {
 
 const prepareDOMElements = () => {
 	detailsCard = document.querySelector('.details');
+	detailsFront = detailsCard.querySelector('[data-side=front]');
+	detailsBack = detailsCard.querySelector('[data-side=back]');
 
+	/* inputs and outputs */
 	cardholderInput = document.querySelector('#cardholder-name');
 	cardholderOutput = document.querySelector('#cardholder-name-output');
 	cardNumberInput = document.querySelector('#card-number');
@@ -31,6 +36,7 @@ const prepareDOMElements = () => {
 	cvcNumberInput = document.querySelector('#card-cvc');
 	cvcNumberOutput = document.querySelector('#card-cvc-output');
 
+	/* buttons */
 	submitBtn = document.querySelector('#details-submit-button');
 	continueBtn = document.querySelector('#confirmation-button');
 };
@@ -220,8 +226,10 @@ const handleSubmitBtn = (e) => {
 	);
 	const { isValid: isCVCValid, errorMsg: cvcError } = validateCVC(cvcNumberInput.value);
 
+	/* check if all are valid */
 	const isValid = isNameValid && isCardNumberValid && isExpirationMonthValid && isExpirationYearValid && isCVCValid;
-	if (isValid) detailsCard.setAttribute('data-completed', '');
+	if (isValid) showConfirmation();
+
 	/* add errors to invalid input fields */
 	if (!isNameValid) showErrorMessage(cardholderInput, nameError);
 	if (!isCardNumberValid) showErrorMessage(cardNumberInput, cardNumberError);
@@ -230,8 +238,23 @@ const handleSubmitBtn = (e) => {
 	if (!isCVCValid) showErrorMessage(cvcNumberInput, cvcError);
 };
 
+const showConfirmation = () => {
+	detailsFront.classList.add('animation-flip-out');
+	setTimeout(() => {
+		detailsFront.classList.remove('animation-flip-out');
+		detailsFront.classList.add('hidden');
+		detailsBack.classList.add('animation-flip-in');
+		detailsBack.classList.remove('hidden');
+	}, 900);
+	setTimeout(() => {
+		detailsBack.classList.remove('animation-flip-in');
+	}, 1800);
+};
+
 const handleContinueBtn = (e) => {
 	detailsCard.removeAttribute('data-completed');
+	detailsFront.classList.remove('hidden');
+	detailsBack.classList.add('hidden');
 	clearInputs();
 	clearOutputs();
 };
